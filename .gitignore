@@ -1,0 +1,36 @@
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+.python-version
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb~*
+
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Logs / temp
+*.log
+*.tmp
+*.bak
+
+# Optional: if you decide to use Git LFS for large data, do NOT ignore CSVs.
+# If you keep data local-only, uncomment the next lines:
+# data/processed/
+# reports/figures/
