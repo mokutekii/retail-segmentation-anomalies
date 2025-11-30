@@ -1,0 +1,49 @@
+Kevin,
+
+Open & Run
+
+Open retail_segmentation.ipynb in VS Code or Jupyter.
+
+Select the .venv kernel if prompted.
+
+Run All. The notebook prints dataset stats and writes outputs to:
+
+data/processed/ (labels/metrics CSVs)
+
+reports/figures/ (all images used in slides/poster)
+
+
+
+Outputs You’ll See
+
+Coverage & distributions: daily_tx.png, hists_core.png, price_qty_hex.png, pareto_spend.png
+
+Segmentation quality: silhouette_k_features.png, silhouette_k_ae.png, silhouette_k_seq.png
+
+Cluster profiles (heatmaps): cluster_profile_heatmap_features.png, ..._ae.png, ..._seq.png
+
+Training curves: ae_loss.png, lstm_loss.png
+
+Business impact: segment_lift_spend.png, segment_reengage_share.png
+
+Anomaly evidence: if_score_hist.png, ae_mse_hist.png, anomaly_agreement_scatter.png, anomaly_cume_spend.png
+
+
+├─ online_retail_II.csv           # dataset (local copy; consider Git LFS if size complaints)
+├─ retail_segmentation.ipynb      # single source-of-truth notebook
+├─ requirements.txt               # env pinning
+├─ data/
+│  └─ processed/                  # generated CSVs (labels, metrics)
+└─ reports/
+   └─ figures/                    # generated PNGs used in slides/poster
+
+
+Common Pitfalls
+
+Kernel doesn’t see packages → you’re not using the repo’s .venv kernel.
+
+UMAP import error → pip install umap-learn.
+
+PyArrow error → pip install pyarrow (needed for parquet).
+
+TensorFlow install issues → ensure Python 3.10–3.11; upgrade pip; on macOS ARM use tensorflow-macos.
