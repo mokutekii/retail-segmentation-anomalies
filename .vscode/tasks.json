@@ -1,0 +1,36 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Test",
+      "type": "shell",
+      "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "args": ["-m", "pytest", "-q"],
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run segmentation pipeline (fast)",
+      "type": "shell",
+      "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "args": ["-m", "retail_segmentation.train", "--fast"],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Docker: build segmentation image",
+      "type": "shell",
+      "command": "docker",
+      "args": ["build", "--tag", "retail-segmentation-anomalies:local", "."],
+      "problemMatcher": []
+    },
+    {
+      "label": "Docker: run segmentation pipeline (fast)",
+      "type": "shell",
+      "command": "docker",
+      "args": ["compose", "run", "--rm", "segment"],
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}

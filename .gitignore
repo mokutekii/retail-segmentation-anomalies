@@ -1,3 +1,40 @@
-﻿.venv/
+# Operating-system files
+.DS_Store
+Thumbs.db
+
+# Python environments, caches, and packaging outputs
+.venv/
 venv/
 ENV/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.matplotlib*/
+.coverage
+coverage.xml
+htmlcov/
+
+# Notebook scratch state
+.ipynb_checkpoints/
+
+# New reproducible-pipeline outputs (legacy course exports remain versioned)
+/artifacts/
+*.joblib
+*.pkl
+*.pt
+*.pth
+
+# LaTeX build artifacts
+reports/*.aux
+reports/*.log
+reports/*.out
+reports/*.bbl
+reports/*.blg
+reports/*.synctex.gz
+reports/*.toc

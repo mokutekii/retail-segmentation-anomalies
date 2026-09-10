@@ -1,0 +1,8 @@
+services:
+  segment:
+    build:
+      context: .
+    image: retail-segmentation-anomalies:local
+    volumes:
+      - ./artifacts:/app/artifacts
+    command: ["--fast"]
